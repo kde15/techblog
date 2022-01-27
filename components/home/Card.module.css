@@ -1,0 +1,49 @@
+.root {
+    width: 100%;
+    height: 16vh;
+    max-height: 16vh;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.root:hover {
+    cursor: pointer;
+}
+
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cardLink:hover {
+    text-decoration: none;
+}
+
+.title {
+    max-height: 6.4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 3.2rem;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.tags {
+    display: block;
+    margin-top: 8px;
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: row;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+}
+
+.dateNotFirst {
+    margin-left: 20px;
+}

@@ -1,0 +1,10 @@
+.articles {
+    display: flex;
+    flex-direction: column;
+}
+
+.loading {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}

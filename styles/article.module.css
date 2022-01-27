@@ -1,0 +1,39 @@
+.titleArea {
+    box-sizing: border-box;
+    width: calc(100% - 50px);
+    height: auto;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.title {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin-top: 3vh;
+    padding: 0.5em 0.2em;
+    font-weight: bold;
+    font-size: 3rem;
+    border-bottom: solid 4px #7db4e6;
+}
+
+.publishDate {
+    display: inline;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+}
+
+.updateDate {
+    display: inline;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.4rem;
+    margin-left: 20px;
+}
+
+.article {
+    box-sizing: border-box;
+    width: calc(100% - 50px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 10px;
+}
