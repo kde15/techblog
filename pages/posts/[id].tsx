@@ -27,7 +27,7 @@ interface Params extends ParsedUrlQuery {
     id: string;
 }
 
-const ArticleComponent: NextPage<Props> = ({ article }) => {
+const ArticlePage: NextPage<Props> = ({ article }) => {
     return (
         <main>
             <aside className="left-aside"></aside>
@@ -124,4 +124,4 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     };
 };
 
-export default ArticleComponent;
+export default ArticlePage;
