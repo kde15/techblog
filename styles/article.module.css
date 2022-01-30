@@ -3,6 +3,7 @@
     width: calc(100% - 50px);
     height: auto;
     margin: 0 auto;
+    margin-bottom: 50px;
     padding: 0 10px;
 }
 

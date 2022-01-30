@@ -16,7 +16,7 @@ header {
     flex-direction: row;
     align-items: center;
     background-color: #000000;
-    color: #ffffff;
+    color: #f7f6e9;
     font-family: -apple-system, "BlinkMacSystemFont",
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Avenir", "Helvetica Neue",
         "Helvetica", "Arial", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic",
@@ -41,6 +41,7 @@ section.main-content {
     position: relative;
     width: 70vw;
     height: auto;
+    padding-bottom: 100px;
     background-color: #fff;
 }
 
@@ -76,6 +77,15 @@ p {
     line-height: 2.5rem;
 }
 
+section.main-content > section > p + p {
+    margin-top: 30px;
+}
+
+section.main-content > section > ul {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 pre > code {
     font-family: Cica, "SFMono-Regular", "Ricty Diminished Discord",
         "Ricty Diminished", Consolas, "Liberation Mono", Menlo, monospace,
@@ -87,7 +97,8 @@ p > code {
         "Ricty Diminished", Consolas, "Liberation Mono", Menlo, monospace,
         "Segoe UI Emoji";
     background-color: #ddd;
-    padding: 3px 4px;
+    padding: 1px 4px;
+    margin: 0px 5px;
 }
 
 h1,
@@ -107,12 +118,16 @@ h1 {
     font-size: 3rem;
     border-left: solid 5px #7db4e6;
     border-bottom: solid 1px black;
+    margin-top: 75px;
+    margin-bottom: 30px;
 }
 
 h2 {
     font-weight: bold;
     font-size: 2.7rem;
     border-bottom: solid 1px black;
+    margin-top: 75px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -188,4 +203,8 @@ h6:hover > div.heading-background > a > span.icon-link {
 /* headingの背景にホバーしたらアンカーリンクを表示する */
 div.heading-background:hover > a > span.icon-link {
     opacity: 0.7;
+}
+
+img {
+    max-width: 100%;
 }
