@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./asideRight.module.css";
+import styles from "./AsideRight.module.css";
 
 const Line: React.FC = ({ children }) => (
     <p className={styles.line}>{children}</p>
