@@ -1,0 +1,17 @@
+.container {
+    background-color: #ffffff;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    padding: 5px 10px;
+    border-width: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.line {
+    font-size: 1.4rem;
+    line-height: 2.3rem;
+    margin: 0 0;
+    padding: 0 0;
+}

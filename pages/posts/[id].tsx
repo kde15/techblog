@@ -13,6 +13,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
 import { JSDOM } from "jsdom";
+import { AsideRight } from "components/AsideRight";
 import { TagList } from "components/utils/tag";
 import { getArticleIds, getArticleContent } from "lib/client";
 import { toFormatString } from "lib/date";
@@ -30,7 +31,7 @@ interface Params extends ParsedUrlQuery {
 const ArticlePage: NextPage<Props> = ({ article }) => {
     return (
         <main>
-            <aside className="left-aside"></aside>
+            <aside className="aside-left"></aside>
             <section className="main-content">
                 <div className={styles.titleArea}>
                     <p className={styles.title}>{article.title}</p>
@@ -49,7 +50,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
                     dangerouslySetInnerHTML={{ __html: article.content }}
                 ></section>
             </section>
-            <aside className="right-aside"></aside>
+            <AsideRight />
         </main>
     );
 };

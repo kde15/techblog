@@ -7,6 +7,7 @@ import { Spinner } from "@chakra-ui/react";
 import { getArticleInfos } from "lib/client";
 import { toFormatString } from "lib/date";
 import type { Article } from "types/api";
+import { AsideRight } from "components/AsideRight";
 import { Card } from "components/home/Card";
 import styles from "styles/index.module.css";
 
@@ -48,7 +49,7 @@ const Home: NextPage<Props> = ({ articles }) => {
 
     return (
         <main>
-            <aside className="left-aside"></aside>
+            <aside className="aside-left"></aside>
             <section className="main-content">
                 <InfiniteScroll
                     loadMore={loadMore}
@@ -83,7 +84,7 @@ const Home: NextPage<Props> = ({ articles }) => {
                     </div>
                 ) : null}
             </section>
-            <aside className="right-aside"></aside>
+            <AsideRight />
         </main>
     );
 };
