@@ -208,3 +208,36 @@ div.heading-background:hover > a > span.icon-link {
 img {
     max-width: 100%;
 }
+
+/* tablet */
+@media screen and (max-width: 1536px) {
+    header {
+        height: 50px;
+    }
+    aside.aside-left {
+        display: none;
+    }
+    aside.aside-right {
+        display: none;
+    }
+    /* headingのアンカーリンクを非表示 */
+    a > span.icon-link {
+        display: none;
+    }
+    section.main-content {
+        /* width: 100vw; */
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    h1 {
+        border-left: 0px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    /* ulの左側の余白を減らす */
+    section.main-content > section > ul {
+        padding-left: 20px;
+    }
+}

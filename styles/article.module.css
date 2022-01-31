@@ -38,3 +38,17 @@
     margin: 0 auto;
     padding: 0 10px;
 }
+
+@media screen and (max-width: 900px) {
+    .titleArea {
+        width: 100%;
+    }
+    .title {
+        padding: 0.2em 0.2em;
+        font-weight: bold;
+        line-height: 3.6rem;
+    }
+    .article {
+        width: 100%;
+    }
+}
