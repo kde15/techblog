@@ -1,7 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import nprogress from "nprogress";
 import "nprogress/nprogress.css";
+import React from "react";
 
 interface Props {
     href: string;

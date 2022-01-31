@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { Spinner } from "@chakra-ui/react";
+import { AsideRight } from "components/AsideRight";
+import { Card } from "components/home/Card";
+import { getArticleInfos } from "lib/client";
+import { toFormatString } from "lib/date";
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
+import React, { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import { Spinner } from "@chakra-ui/react";
-import { getArticleInfos } from "lib/client";
-import { toFormatString } from "lib/date";
-import type { Article } from "types/api";
-import { AsideRight } from "components/AsideRight";
-import { Card } from "components/home/Card";
 import styles from "styles/index.module.css";
+import type { Article } from "types/api";
 
 interface Props {
     articles: Article[];
