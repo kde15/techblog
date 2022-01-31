@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "styles/Header.module.css";
+import styles from "./Header.module.css";
 import { LoadingLink } from "components/utils/LoadingLink";
 
 export const Header = () => {
