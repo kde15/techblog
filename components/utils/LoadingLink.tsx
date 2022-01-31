@@ -19,7 +19,9 @@ export const LoadingLink: React.FC<Props> = ({
         <Link href={href}>
             <a
                 onClick={() => {
-                    nprogress.start();
+                    if (href !== location.pathname) {
+                        nprogress.start();
+                    }
                 }}
                 className={className}
             >
