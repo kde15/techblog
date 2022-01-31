@@ -45,12 +45,12 @@ section.main-content {
     background-color: #fff;
 }
 
-aside.left-aside {
+aside.aside-left {
     width: 10vw;
     min-height: 95vh;
 }
 
-aside.right-aside {
+aside.aside-right {
     width: 20vw;
     min-height: 95vh;
 }
