@@ -15,9 +15,6 @@ export const Header = () => {
             <p className={styles.navLink}>
                 <LoadingLink href="/" className={styles.link} text="記事一覧" />
             </p>
-            <p className={styles.navLink}>
-                <LoadingLink href="/" className={styles.link} text="タグ一覧" />
-            </p>
         </header>
     );
 };
