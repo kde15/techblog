@@ -1,4 +1,8 @@
-.tag:hover {
+.text {
+    color: inherit;
+}
+
+.text:hover {
     cursor: pointer;
     text-decoration: underline;
 }

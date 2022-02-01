@@ -29,12 +29,30 @@ const createArticle = (response: any) => {
 };
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-const toArray = (response: any[]) => {
+const createTag = (response: any) => {
+    return {
+        id: response.id ?? "",
+        name: response.name ?? "",
+        color: response.color ?? "",
+    } as Tag;
+};
+
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+const toArticleArray = (response: any[]) => {
     const articles: Article[] = [];
     for (const res of response) {
         articles.push(createArticle(res));
     }
     return articles;
+};
+
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+const toTagArray = (response: any[]) => {
+    const tags: Tag[] = [];
+    for (const res of response) {
+        tags.push(createTag(res));
+    }
+    return tags;
 };
 
 // [id].tsxで記事のURLを動的に生成するために使う
@@ -46,7 +64,7 @@ export const getArticleIds = async () => {
             fields: ["id", "pathId"], // 取得対象のフィールド
         },
     });
-    return toArray(res.contents);
+    return toArticleArray(res.contents);
 };
 
 // [id].tsxで記事を表示するために使う
@@ -92,5 +110,41 @@ export const getArticleInfos = async () => {
             orders: "-publishedAt", // 新しい記事が前にくるようにする
         },
     });
-    return toArray(res.contents);
+    return toArticleArray(res.contents);
+};
+
+// [tag].tsxで記事のURLを動的に生成するために使う
+export const getTags = async () => {
+    const res = await client.getList({
+        endpoint: "tags",
+        queries: {
+            limit: 10000,
+            fields: ["id"],
+        },
+    });
+    return toTagArray(res.contents);
+};
+
+// [tag].tsxで記事一覧を表示するために使う
+export const getArticleInfosByTag = async (tag: string) => {
+    const res = await client.getList({
+        endpoint: "posts",
+        queries: {
+            limit: 10000, // OPTIMIZE: 記事が増えたら一応1000件ずつ取得にすべきか
+            fields: [
+                "pathId",
+                "title",
+                "tags.id",
+                "tags.name",
+                "tags.color",
+                "categories.id",
+                "categories.name",
+                "publishedAt",
+                "revisedAt",
+            ],
+            filters: `tags[contains]${tag}`,
+            orders: "-publishedAt", // 新しい記事が前にくるようにする
+        },
+    });
+    return toArticleArray(res.contents);
 };

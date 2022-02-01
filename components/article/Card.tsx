@@ -1,5 +1,3 @@
-import nprogress from "nprogress";
-import "nprogress/nprogress.css";
 import React from "react";
 import { TagList } from "~/components/article/tag";
 import { LoadingLink } from "~/components/utils/LoadingLink";
@@ -22,22 +20,19 @@ export const Card: React.FC<Props> = ({
     revisedAt,
 }) => {
     return (
-        <div
-            className={styles.root}
-            onClick={() => {
-                nprogress.start();
-            }}
-        >
-            <LoadingLink href={link} className={styles.cardLink} text="">
-                <p className={styles.title}>{title}</p>
-                <div className={styles.tags}>
-                    <TagList tags={tags} />
-                </div>
-                <div className={styles.dateContainer}>
-                    <p>公開 {publishedAt}</p>
-                    <p className={styles.dateNotFirst}>更新 {revisedAt}</p>
-                </div>
-            </LoadingLink>
+        <div className={styles.root}>
+            <LoadingLink
+                href={link}
+                className={styles.title}
+                text={title}
+            ></LoadingLink>
+            <div className={styles.tags}>
+                <TagList tags={tags} />
+            </div>
+            <div className={styles.dateContainer}>
+                <p>公開 {publishedAt}</p>
+                <p className={styles.dateNotFirst}>更新 {revisedAt}</p>
+            </div>
         </div>
     );
 };
