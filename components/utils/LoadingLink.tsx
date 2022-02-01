@@ -18,7 +18,8 @@ export const LoadingLink: React.FC<Props> = ({
     return (
         <Link href={href}>
             <a
-                onClick={() => {
+                onClick={(e) => {
+                    e.stopPropagation();
                     if (href !== location.pathname) {
                         nprogress.start();
                     }
