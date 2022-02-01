@@ -5,8 +5,8 @@ import React from "react";
 
 interface Props {
     href: string;
-    className: string;
-    text: string;
+    className?: string;
+    text?: string;
 }
 
 export const LoadingLink: React.FC<Props> = ({
@@ -23,9 +23,9 @@ export const LoadingLink: React.FC<Props> = ({
                         nprogress.start();
                     }
                 }}
-                className={className}
+                className={className ?? ""}
             >
-                {text !== "" ? text : null}
+                {text ?? null}
                 {children}
             </a>
         </Link>
