@@ -12,12 +12,12 @@ import rehypeStringify from "rehype-stringify";
 import remarkBreaks from "remark-breaks";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import styles from "styles/article.module.css";
 import { unified } from "unified";
 import { TagList } from "~/components/article/tag";
 import { AsideRight } from "~/components/AsideRight";
 import { getArticleContent, getArticleIds } from "~/lib/client";
 import { toFormatString } from "~/lib/date";
+import styles from "~/styles/article.module.css";
 import type { Article } from "~/types/api";
 
 interface Props {

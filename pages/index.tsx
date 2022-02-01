@@ -4,11 +4,11 @@ import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
 import React, { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import styles from "styles/index.module.css";
 import { Card } from "~/components/article/Card";
 import { AsideRight } from "~/components/AsideRight";
 import { getArticleInfos } from "~/lib/client";
 import { toFormatString } from "~/lib/date";
+import styles from "~/styles/index.module.css";
 import type { Article } from "~/types/api";
 
 interface Props {

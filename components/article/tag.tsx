@@ -1,5 +1,6 @@
 import { Tag as ChakraTag, TagLabel } from "@chakra-ui/react";
 import React from "react";
+import { LoadingLink } from "~/components/utils/LoadingLink";
 import type { Tag as Props } from "~/types/api";
 import styles from "./tag.module.css";
 
