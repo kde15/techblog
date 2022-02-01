@@ -1,6 +1,6 @@
 import { Tag as ChakraTag, TagLabel } from "@chakra-ui/react";
 import React from "react";
-import type { Tag as Props } from "types/api";
+import type { Tag as Props } from "~/types/api";
 import styles from "./tag.module.css";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */

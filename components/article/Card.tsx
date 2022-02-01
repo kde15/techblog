@@ -1,9 +1,9 @@
-import { LoadingLink } from "components/utils/LoadingLink";
-import { TagList } from "components/utils/tag";
 import nprogress from "nprogress";
 import "nprogress/nprogress.css";
 import React from "react";
-import type { Tag } from "types/api";
+import { TagList } from "~/components/article/tag";
+import { LoadingLink } from "~/components/utils/LoadingLink";
+import type { Tag } from "~/types/api";
 import styles from "./Card.module.css";
 
 interface Props {

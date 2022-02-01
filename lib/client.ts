@@ -1,5 +1,5 @@
 import { createClient } from "microcms-js-sdk";
-import type { Article } from "types/api";
+import type { Article, Tag } from "~/types/api";
 
 export const client = (() => {
     const apiKey = process.env.API_KEY;

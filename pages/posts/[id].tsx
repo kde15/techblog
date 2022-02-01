@@ -1,10 +1,6 @@
-import { AsideRight } from "components/AsideRight";
-import { TagList } from "components/article/tag";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
 import { JSDOM } from "jsdom";
-import { getArticleContent, getArticleIds } from "lib/client";
-import { toFormatString } from "lib/date";
 import type { NextPage } from "next";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
@@ -17,8 +13,12 @@ import remarkBreaks from "remark-breaks";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import styles from "styles/article.module.css";
-import type { Article } from "types/api";
 import { unified } from "unified";
+import { TagList } from "~/components/article/tag";
+import { AsideRight } from "~/components/AsideRight";
+import { getArticleContent, getArticleIds } from "~/lib/client";
+import { toFormatString } from "~/lib/date";
+import type { Article } from "~/types/api";
 
 interface Props {
     article: Article;

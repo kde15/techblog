@@ -1,10 +1,10 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { Header } from "components/Header";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import nprogress from "nprogress";
 import React, { useEffect } from "react";
 import "styles/globals.css";
+import { Header } from "~/components/Header";
 
 nprogress.configure({ showSpinner: false, speed: 500, minimum: 0.25 });
 
