@@ -1,5 +1,5 @@
 import { AsideRight } from "components/AsideRight";
-import { TagList } from "components/utils/tag";
+import { TagList } from "components/article/tag";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
 import { JSDOM } from "jsdom";
@@ -63,6 +63,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
             id: `${article.pathId}`, // これが"/posts/[id]"というパスに使われる
         } as Params,
     }));
+    console.log(paths);
 
     return { paths, fallback: false };
 };

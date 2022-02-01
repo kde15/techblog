@@ -1,6 +1,6 @@
 import { Spinner } from "@chakra-ui/react";
 import { AsideRight } from "components/AsideRight";
-import { Card } from "components/home/Card";
+import { Card } from "components/article/Card";
 import { getArticleInfos } from "lib/client";
 import { toFormatString } from "lib/date";
 import type { NextPage } from "next";
