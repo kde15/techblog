@@ -19,16 +19,15 @@ export const AsideRight = () => {
                     <strong>自己紹介</strong>
                 </p>
                 <Line>エンジニア実務経験3年の26歳です。</Line>
-                <Line>現在は転職活動中です。</Line>
                 <Line>
-                    Javaのバックエンドを2年程やった後にReactを触り、フロントエンドに興味が湧いてプライベートでも使っています。
+                    Javaのバックエンドを2年程やった後にReactを触り、フロントエンドに興味が湧いてプライベートでも勉強中です。
                 </Line>
                 <Line>
                     Reactの他にはTypeScript、Go、Firebase、AWS
                     Amplify、Lambda、CDKに興味があります。
                 </Line>
                 <Line>
-                    Firebase以外は実務・プライベートで使った経験があり、今年はFirebaseを使ってなにか作ろうと思っています。
+                    AWS CDK以外は実務・プライベートで使った経験があります。
                 </Line>
                 <Line>コンビニコーヒーと玄米茶が好きです。</Line>
             </div>
