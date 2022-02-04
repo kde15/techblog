@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
@@ -63,7 +64,6 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
             id: `${article.pathId}`, // これが"/posts/[id]"というパスに使われる
         } as Params,
     }));
-    console.log(paths);
 
     return { paths, fallback: false };
 };
@@ -84,6 +84,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
     // parse markdown to html
     const content = await unified()
         .use(remarkParse)
+        .use(remarkGfm)
         .use(remarkBreaks)
         .use(remarkRehype)
         .use(rehypeStringify)
