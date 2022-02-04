@@ -2,13 +2,13 @@ import { Spinner } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "node:querystring";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import styles from "~/styles/index.module.css";
 import { Card } from "~/components/article/Card";
 import { AsideRight } from "~/components/AsideRight";
 import { getArticleInfosByTag, getTags } from "~/lib/client";
 import { toFormatString } from "~/lib/date";
+import styles from "~/styles/index.module.css";
 import { Article } from "~/types/api";
 
 interface Props {
@@ -28,6 +28,13 @@ const ArticlesByTag: NextPage<Props> = ({ articles }) => {
     const [showCount, setShowCount] = useState(
         Math.min(initialMaxContents, maxContents)
     );
+
+    // 別のタグを選択した場合に表示を更新する
+    const pathname = process.browser ? location.pathname : "";
+    useEffect(() => {
+        setShowCount(Math.min(initialMaxContents, maxContents));
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, [pathname]);
 
     // まだ表示していない記事があるかどうかのフラグ
     const [hasMore, setHasMore] = useState(
