@@ -8,7 +8,19 @@ interface ThemeConfig {
 
 const themeConfig = (theme: Theme): ThemeConfig => {
     return {
-        "background-color": theme === "light" ? "#ffffff" : "#000000",
+        "header-background-color": "#171717",
+        "header-font-color": theme === "light" ? "#ffffff" : "#ffffff",
+        "main-background-color": theme === "light" ? "#dddddd" : "#000000",
+        "section-background-color": theme === "light" ? "#ffffff" : "#231f1f",
+        "border-color": theme === "light" ? "#ffffff" : "#313335",
+        "font-color": theme === "light" ? "#000000" : "#cecdc0",
+        "thin-font-color":
+            theme === "light"
+                ? "rgba(0, 0, 0, 0.5)"
+                : "rgba(255, 255, 255, 0.5)",
+        "code-span-color": theme === "light" ? "#dddddd" : "#424a52",
+        "heading-border-left": "#7db4e6",
+        "heading-border-bottom": theme === "light" ? "#000000" : "#30363d",
     } as ThemeConfig;
 };
 

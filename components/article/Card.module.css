@@ -30,7 +30,7 @@
 .dateContainer {
     display: flex;
     flex-direction: row;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--thin-font-color);
     font-size: 1.4rem;
 }
 

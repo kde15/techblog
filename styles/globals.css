@@ -15,8 +15,9 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #000000;
-    color: #f7f6e9;
+    background-color: var(--header-background-color);
+    color: var(--header-font-color);
+    border-bottom: var(--border-color) solid 1px;
     font-family: -apple-system, "BlinkMacSystemFont",
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Avenir", "Helvetica Neue",
         "Helvetica", "Arial", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic",
@@ -29,7 +30,8 @@ main {
     flex-direction: row;
     max-width: 100vw;
     height: auto;
-    background-color: #ddd;
+    color: var(--font-color);
+    background-color: var(--main-background-color);
     font-family: -apple-system, "BlinkMacSystemFont",
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Avenir", "Helvetica Neue",
         "Helvetica", "Arial", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic",
@@ -42,7 +44,9 @@ section.main-content {
     width: 70vw;
     height: auto;
     padding-bottom: 100px;
-    background-color: #fff;
+    background-color: var(--section-background-color);
+    border-left: var(--border-color) solid 1px;
+    border-right: var(--border-color) solid 1px;
 }
 
 aside.aside-left {
@@ -96,7 +100,7 @@ p > code {
     font-family: Cica, "SFMono-Regular", "Ricty Diminished Discord",
         "Ricty Diminished", Consolas, "Liberation Mono", Menlo, monospace,
         "Segoe UI Emoji";
-    background-color: #ddd;
+    background-color: var(--code-span-color);
     padding: 1px 4px;
     margin: 0px 5px;
 }
@@ -116,8 +120,8 @@ h1 {
     padding: 0.25em 0.3em; /* 上下 左右 */
     font-weight: bold;
     font-size: 3rem;
-    border-left: solid 5px #7db4e6;
-    border-bottom: solid 1px black;
+    border-left: solid 5px var(--heading-border-left);
+    border-bottom: solid 1px var(--heading-border-bottom);
     margin-top: 75px;
     margin-bottom: 30px;
 }
@@ -125,7 +129,7 @@ h1 {
 h2 {
     font-weight: bold;
     font-size: 2.7rem;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px var(--heading-border-bottom);
     margin-top: 75px;
     margin-bottom: 20px;
 }

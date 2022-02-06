@@ -20,13 +20,13 @@
 
 .publishDate {
     display: inline;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--thin-font-color);
     font-size: 1.4rem;
 }
 
 .updateDate {
     display: inline;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--thin-font-color);
     font-size: 1.4rem;
     margin-left: 20px;
 }

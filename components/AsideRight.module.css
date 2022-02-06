@@ -1,5 +1,7 @@
 .container {
-    background-color: #ffffff;
+    background-color: var(--section-background-color);
+    color: inherit;
+    border: var(--border-color) solid 1px;
     width: 90%;
     height: auto;
     margin: 20px auto;
