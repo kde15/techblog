@@ -10,7 +10,7 @@ import "~/styles/globals.css";
 nprogress.configure({ showSpinner: false, speed: 500, minimum: 0.25 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const [theme, setTheme] = useState<Theme>("dark");
+    const [theme, setTheme] = useState<Theme>("light");
     useTheme(theme);
     useEffect(() => {
         nprogress.done();
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <title>日々の技術学習録</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
+            <Header theme={theme} setTheme={setTheme} />
             <Component {...pageProps} />
         </ChakraProvider>
     );

@@ -1,8 +1,21 @@
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import React from "react";
 import { LoadingLink } from "~/components/utils/LoadingLink";
+import type { Theme } from "~/hooks/theme";
 import styles from "./Header.module.css";
 
-export const Header = () => {
+export const Header: React.FC<{
+    theme: Theme;
+    setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+}> = ({ theme, setTheme }) => {
+    const toggleTheme = () => {
+        if (theme === "light") {
+            setTheme("dark");
+        } else {
+            setTheme("light");
+        }
+    };
+
     return (
         <header>
             <div className={styles.title}>
@@ -12,9 +25,16 @@ export const Header = () => {
                     text="日々の技術学習録"
                 />
             </div>
-            <p className={styles.navLink}>
+            <p className={styles.articlesLink}>
                 <LoadingLink href="/" className={styles.link} text="記事一覧" />
             </p>
+            <button className={styles.iconButton} onClick={toggleTheme}>
+                {theme === "light" ? (
+                    <MoonIcon color="#ffffff" width="60%" height="60%" />
+                ) : (
+                    <SunIcon color="#ffffff" width="60%" height="60%" />
+                )}
+            </button>
         </header>
     );
 };
