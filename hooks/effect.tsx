@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect } from "react";
+import { isBrowser } from "~/lib/utils";
 
-const myLayoutEffect =
-    typeof window === "undefined" ? useEffect : useLayoutEffect;
+const myLayoutEffect = isBrowser() ? useLayoutEffect : useEffect;
 
 export default myLayoutEffect;

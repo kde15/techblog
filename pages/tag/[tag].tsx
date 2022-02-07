@@ -8,6 +8,7 @@ import { Card } from "~/components/article/Card";
 import { AsideRight } from "~/components/AsideRight";
 import { getArticleInfosByTag, getTags } from "~/lib/client";
 import { toFormatString } from "~/lib/date";
+import { isBrowser } from "~/lib/utils";
 import styles from "~/styles/index.module.css";
 import { Article } from "~/types/api";
 
@@ -30,7 +31,7 @@ const ArticlesByTag: NextPage<Props> = ({ articles }) => {
     );
 
     // 別のタグを選択した場合に表示を更新する
-    const pathname = process.browser ? location.pathname : "";
+    const pathname = isBrowser() ? location.pathname : "";
     useEffect(() => {
         setShowCount(Math.min(initialMaxContents, maxContents));
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
