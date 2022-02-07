@@ -1,5 +1,6 @@
 import { useState } from "react";
 import myLayoutEffect from "~/hooks/effect";
+import { isBrowser } from "~/lib/utils";
 
 export type Theme = "light" | "dark";
 
@@ -7,6 +8,7 @@ interface ThemeConfig {
     [name: string]: string;
 }
 
+// スタイルの定義
 const themeConfig = (theme: Theme): ThemeConfig => {
     return {
         "header-background-color": "#171717",
@@ -25,16 +27,53 @@ const themeConfig = (theme: Theme): ThemeConfig => {
     } as ThemeConfig;
 };
 
+// localStorageから現在のテーマを取得する
+const getSavedTheme = (): Theme => {
+    if (!isBrowser()) {
+        return "light";
+    }
+    const theme = localStorage.getItem("theme") ?? "";
+    if (theme === "light" || theme === "dark") {
+        return theme;
+    }
+    return "light";
+};
+
+// localStorageにテーマを保存する
+const saveTheme = (value: Theme) => {
+    if (!isBrowser()) {
+        return;
+    }
+    if (value === "light" || value === "dark") {
+        localStorage.setItem("theme", value);
+    }
+};
+
 export const useTheme = () => {
-    const [theme, setTheme] = useState<Theme>("light");
+    const initialTheme = getSavedTheme();
+    const [theme, setTheme] = useState<Theme>(initialTheme);
+
+    // テーマを切り替える関数
+    const toggleTheme = () => {
+        if (theme === "light") {
+            saveTheme("dark");
+            setTheme("dark");
+        } else {
+            saveTheme("light");
+            setTheme("light");
+        }
+    };
+
+    // CSSスタイルを反映する
     const configs = themeConfig(theme);
     myLayoutEffect(() => {
         for (const [key, value] of Object.entries(configs)) {
             document.documentElement.style.setProperty(`--${key}`, value);
         }
     }, [theme]);
+
     return {
         theme,
-        setTheme,
+        toggleTheme,
     };
 };

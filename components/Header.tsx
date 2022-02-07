@@ -6,16 +6,8 @@ import styles from "./Header.module.css";
 
 export const Header: React.FC<{
     theme: Theme;
-    setTheme: React.Dispatch<React.SetStateAction<Theme>>;
-}> = ({ theme, setTheme }) => {
-    const toggleTheme = () => {
-        if (theme === "light") {
-            setTheme("dark");
-        } else {
-            setTheme("light");
-        }
-    };
-
+    toggleTheme: () => void;
+}> = ({ theme, toggleTheme }) => {
     return (
         <header>
             <div className={styles.title}>

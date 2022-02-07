@@ -10,7 +10,7 @@ import "~/styles/globals.css";
 nprogress.configure({ showSpinner: false, speed: 500, minimum: 0.25 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const { theme, setTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
     useEffect(() => {
         nprogress.done();
     });
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <title>日々の技術学習録</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header theme={theme} setTheme={setTheme} />
+            <Header theme={theme} toggleTheme={toggleTheme} />
             <Component {...pageProps} />
         </ChakraProvider>
     );
