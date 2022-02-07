@@ -1,3 +1,4 @@
+import { useState } from "react";
 import myLayoutEffect from "~/hooks/effect";
 
 export type Theme = "light" | "dark";
@@ -24,11 +25,16 @@ const themeConfig = (theme: Theme): ThemeConfig => {
     } as ThemeConfig;
 };
 
-export const useTheme = (theme: Theme) => {
+export const useTheme = () => {
+    const [theme, setTheme] = useState<Theme>("light");
     const configs = themeConfig(theme);
     myLayoutEffect(() => {
         for (const [key, value] of Object.entries(configs)) {
             document.documentElement.style.setProperty(`--${key}`, value);
         }
     }, [theme]);
+    return {
+        theme,
+        setTheme,
+    };
 };
