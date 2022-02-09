@@ -6,13 +6,14 @@ import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { Card } from "~/components/article/Card";
 import { AsideRight } from "~/components/AsideRight";
-import { getArticleInfosByTag, getTags } from "~/lib/client";
+import { getArticleInfosByTag, getTagName, getTags } from "~/lib/client";
 import { toFormatString } from "~/lib/date";
 import { isBrowser } from "~/lib/utils";
 import styles from "~/styles/index.module.css";
 import { Article } from "~/types/api";
 
 interface Props {
+    tagName: string;
     articles: Article[];
 }
 
@@ -20,7 +21,7 @@ interface Params extends ParsedUrlQuery {
     tag: string;
 }
 
-const ArticlesByTag: NextPage<Props> = ({ articles }) => {
+const ArticlesByTag: NextPage<Props> = ({ articles, tagName }) => {
     const initialMaxContents = 10;
     const maxContents = articles.length;
     const onePageContents = 5;
@@ -63,6 +64,7 @@ const ArticlesByTag: NextPage<Props> = ({ articles }) => {
         <main>
             <aside className="aside-left"></aside>
             <section className="main-content">
+                <p className={styles.tagName}>{tagName} の記事一覧</p>
                 <InfiniteScroll
                     loadMore={loadMore}
                     hasMore={!isFetching && hasMore}
@@ -120,12 +122,17 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
             "Error in pages/posts/[tag].tsx getStaticProps() : paramsが空です"
         );
     }
-    const tag = params.tag;
+
+    const tagId = params.tag;
     // 記事一覧を取得
-    const articles = await getArticleInfosByTag(tag);
+    const articles = await getArticleInfosByTag(tagId);
+    // タグ名を取得
+    const tag = await getTagName(tagId);
+
     return {
         props: {
             articles,
+            tagName: tag.name,
         },
     };
 };

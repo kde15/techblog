@@ -148,3 +148,21 @@ export const getArticleInfosByTag = async (tag: string) => {
     });
     return toArticleArray(res.contents);
 };
+
+// [tag].tsxでタグ名を表示するために使う
+export const getTagName = async (tagId: string) => {
+    const res = await client.getList({
+        endpoint: "tags",
+        queries: {
+            limit: 1,
+            fields: [
+                "name",
+            ],
+            filters: `id[equals]${tagId}`,
+        },
+    });
+    if (res.contents.length < 1) {
+        return { id: "", name: "", color: "" } as Tag;
+    }
+    return createTag(res.contents[0])
+};
