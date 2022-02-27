@@ -96,6 +96,8 @@ pre > code {
     font-family: Cica, "SFMono-Regular", "Ricty Diminished Discord",
         "Ricty Diminished", Consolas, "Liberation Mono", Menlo, monospace,
         "Segoe UI Emoji";
+    font-size: 1.5rem;
+    border-radius: 8px;
 }
 
 p > code {
@@ -119,7 +121,7 @@ h6 {
 }
 
 h1 {
-    padding: 0.25em 0.3em; /* 上下 左右 */
+    padding: 0.25em 0.7em; /* 上下 左右 */
     font-weight: bold;
     font-size: 3rem;
     border-left: solid 5px var(--heading-border-left);
@@ -242,8 +244,19 @@ img {
 
 /* mobile */
 @media screen and (max-width: 900px) {
+    header {
+        height: 64px;
+        padding-left: 10px;
+    }
     /* ulの左側の余白を減らす */
     section.main-content > section > ul {
         padding-left: 20px;
+    }
+    h1 {
+        padding: 0.25em 0.2em; /* 上下 左右 */
+    }
+    /* コードブロックのフォントサイズを修正 */
+    pre > code {
+        font-size: 1.2rem;
     }
 }
